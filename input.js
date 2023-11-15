@@ -1,28 +1,28 @@
 
 let connection;
 
-const handleUserInput = function (input) {
+const handleUserInput = function(input) {
   // your code here
   if (input === '\u0003') {
     process.exit();
   }
-  if(input === 'w'){
+  if (input === 'w') {
     connection.write("Move: up");
   }
-  if(input === 'a'){
+  if (input === 'a') {
     connection.write("Move: left");
   }
-  if(input === 's'){
+  if (input === 's') {
     connection.write("Move: down");
   }
-  if(input === 'd'){
+  if (input === 'd') {
     connection.write("Move: right");
   }
-  if(input === 'q'){
+  if (input === 'r') {
     connection.write("Say: RIGHT ON");
   }
 };
-const setupInput = function (conn) {
+const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -35,4 +35,4 @@ const setupInput = function (conn) {
 module.exports = {
   handleUserInput,
   setupInput,
-}
+};
